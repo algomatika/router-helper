@@ -1,11 +1,11 @@
 {
   "name": "@algomatika/router-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "module for reading controllers, intended to use with expressjs",
   "main": "index.js",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/algomatika/router-helper.git"
+    "type": "git",
+    "url": "https://github.com/algomatika/router-helper.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
