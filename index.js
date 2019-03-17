@@ -34,8 +34,19 @@ function asignPath(ext){
     
     //var filename = path.parse(x).name
     var y = x.split('.js')
+    var name = y[0].split('Controller')
+    var pathReady = ""
     
-    l[y] = require(originDir+slash+x)
+    var path = name[0].split(global.slash)
+
+    for(var a = 0;a<path.length;a++){
+        if(a>0&&a===(path.length-1)&&path[a]==="Main"){
+          continue
+        }
+        pathReady+="/"+path[a]
+    }
+    
+    l[pathReady] = require(originDir+slash+x)
 }
 
 function checkNow(dir,file){
