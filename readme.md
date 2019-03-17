@@ -13,7 +13,7 @@ usage:
     [project root path] --> controllers --> user --> MainController.js or  controllers --> userController.js
 5. there will be an error if you do not do module.exports = router (from require('express').Router())
 
-~~~~nodejs
+~~~~js
 
 //in app.js or index.js or .js that will be run to exec expressjs
 const routeHelper = require('@algomatika/router-helper')
@@ -21,19 +21,10 @@ var routerPath = routeHelper(__dirname)
 
 //the code below is just an example how to use it
 Object.keys(routerPath).forEach(function(key) {
-    var name = key.split('Controller')
-    var path = name[0].split(global.slash)
-    var pathReady = ""
-    for(var x = 0;x<path.length;x++){
-      if(x>0&&x===(path.length-1)&&path[x]==="Main"){
-        continue
-      }
-      pathReady+="/"+path[x]
-    }
-    if(pathReady==="/Main")
-      app.use('/',routerPath[key])
-    else
-      app.use(pathReady,routerPath[key])
+  if(key==="/Main")
+    app.use('/',routerPath[key])
+  else
+    app.use(key,routerPath[key])
 })
 ~~~~
 
