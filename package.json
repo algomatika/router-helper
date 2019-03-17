@@ -1,6 +1,6 @@
 {
   "name": "@algomatika/router-helper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "module for reading controllers, intended to use with expressjs",
   "main": "index.js",
   "repository": {
